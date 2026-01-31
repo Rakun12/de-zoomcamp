@@ -45,19 +45,6 @@ parse_dates = [
 @click.option('--chunksize', default=100000, type=int, help='Chunk size for ingestion')
 def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, chunksize, target_table):
     """Ingest NYC taxi data into PostgreSQL database"""
-    pg_user = 'root'
-    pg_pass = 'root'
-    pg_host = 'localhost'
-    pg_port = 5432
-    pg_db = 'ny_taxi'
-
-    year = 2021
-    month = 1
-
-    target_table = 'yellow_taxi_data'
-
-    chunksize=100000
-
     prefix = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow'
     url = f"{prefix}/yellow_tripdata_{year}-{month:02d}.csv.gz"
 
